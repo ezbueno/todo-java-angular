@@ -20,7 +20,7 @@
 - JPA com Hibernate
 - Validação de dados
 - Tratamento de exceções
-- Uso adequado do protocolo HTTP no padrão RES
+- Uso adequado do protocolo HTTP no padrão REST
 
 # Versão: Spring Boot 2.3.x
 
