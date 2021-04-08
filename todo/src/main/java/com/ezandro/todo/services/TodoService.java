@@ -29,5 +29,10 @@ public class TodoService {
 		List<Todo> list = todoRepository.findAllClose();
 		return list;
 	}
+
+	public List<Todo> findAll() {
+		List<Todo> list = todoRepository.findAll();
+		return list;
+	}
 		
 }
