@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Profile;
 import com.ezandro.todo.services.DBService;
 
 @Configuration
-@Profile("test")
+@Profile(value = "test")
 public class TestConfig {
 	
 	@Autowired
