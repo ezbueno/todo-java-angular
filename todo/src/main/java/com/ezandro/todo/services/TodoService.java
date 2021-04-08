@@ -1,5 +1,6 @@
 package com.ezandro.todo.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,10 @@ public class TodoService {
 		Optional<Todo> obj = todoRepository.findById(id);
 		return obj.orElseThrow(null);
 	}
-	
-	
+
+	public List<Todo> findAllOpen() {
+		List<Todo> list = todoRepository.findAllOpen();
+		return list;
+	}
+		
 }
