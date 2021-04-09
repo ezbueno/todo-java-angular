@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,6 +54,12 @@ public class TodoResource {
 		obj = todoService.create(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
+	}
+	
+	@PutMapping(value = "/{id}")
+	public ResponseEntity<Todo> update(@PathVariable Integer id, @RequestBody Todo obj) {
+		Todo newObj = todoService.update(id, obj);
+		return ResponseEntity.ok().body(newObj);
 	}
 	
 	@DeleteMapping(value = "/{id}")
